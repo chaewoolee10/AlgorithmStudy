@@ -34,4 +34,5 @@ int func3(int n)
     return 0;
 }
 
+O(logN) 풀이 존재
 */

@@ -30,4 +30,4 @@ int func2(int *arr, int n)
     }
     return flag;
 }
-//O(N)으로 풀 수 있는 풀이 존재
+//O(N) 풀이 존재

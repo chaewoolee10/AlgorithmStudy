@@ -23,4 +23,4 @@ long long int func1(int n)
     }
     return sum;
 }
-//O(1) 로 짤 수 있는 방법 존재
+//O(1) 풀이 존재

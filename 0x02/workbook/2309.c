@@ -19,21 +19,18 @@ int main()
         int sum = 0;
         for(int j = i + 1; j < 9; j++)
         {
+            sum = 0;
             for(int k = 0; k < 9; k++)
             {
                 if(i != k && j != k)
                 {
                     sum += arr[k];
                 }
-                if(sum == 100)
-                {
-                    index1 = i;
-                    index2 = j;
-                    break;
-                }
             }
             if(sum == 100)
             {
+                index1 = i;
+                index2 = j;
                 break;
             }
         }

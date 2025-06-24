@@ -31,10 +31,10 @@ int main()
     unused = length + 1;
     for(int i = 0; i < length; i++)
     {
-        dat[i + 1] = str[i]; //dummy node와 맞추기 위해 1번부터 저장
+        dat[i + 1] = str[i]; //dummy node와 맞추기 위해 1번부터 저장, 0번은 dummy node
     }
     
-    for (int i = 0; i <= length; i++) // 0번은 dummy node
+    for (int i = 0; i <= length; i++)
     {
         pre[i] = i - 1;
         nxt[i] = i + 1;
@@ -62,7 +62,7 @@ void commandcheck(char command, char *add_c)
     switch (command)
     {
     case 'P':
-        dat[unused] = add_c[0];
+        dat[unused] = add_c[0]; //strcat -> dat의 맨 뒤에 저장 => 시간 절약
         pre[unused] = addr;
         if(nxt[addr] == -1)
         {
@@ -77,7 +77,7 @@ void commandcheck(char command, char *add_c)
         }
         pre[unused] = addr;
         unused++;
-        addr = nxt[addr];
+        addr = nxt[addr]; //다음 노드로 이동
         
         break;
     case 'L':
@@ -97,7 +97,7 @@ void commandcheck(char command, char *add_c)
         {
             nxt[pre[addr]] = nxt[addr];
             pre[nxt[addr]] = pre[addr];
-            addr = pre[addr];
+            addr = pre[addr]; //전 노드로 이동
         }
         break;
     }
